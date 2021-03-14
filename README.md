@@ -1,27 +1,36 @@
-# AngularPractice
+# angular-routing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+### Practical work with routing in Angular.
 
-## Development server
+Several pages are dynamically rendered in our application without reloading:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Home;
+- Posts - inside routing for each post;
+- About -  inside routing to about-extra.
 
-## Code scaffolding
+![route1](https://user-images.githubusercontent.com/58369971/111072454-55fcb700-84e3-11eb-819c-fbc488d74dbb.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+If the user is not sign in, components (pages) are not loaded. This functionality is implemented using Guards in service AuthGuard. 
+There is also protection for nested routes on the about page - about-extra pages.
 
-## Build
+In main page has a software navigation on the button 'Go to Posts' - which go to the posts page.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![route5](https://user-images.githubusercontent.com/58369971/111072452-55642080-84e3-11eb-995c-b38c8f5de4c3.png)
 
-## Running unit tests
+In the project, I practice registering routes, dynamically changing pages, and marking active links.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+From the posts page, you can go to the page of each post separately. Implemented through of dynamic routes according to the ID of the required post.
 
-## Running end-to-end tests
+![route2](https://user-images.githubusercontent.com/58369971/111072455-55fcb700-84e3-11eb-81aa-9d02035a8dad.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Also, on the post page, we worked with the queryParams to determine whether to show the id in the list of posts or not.
 
-## Further help
+![route3](https://user-images.githubusercontent.com/58369971/111072450-5432f380-84e3-11eb-8a81-142c0b0905a2.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![route4](https://user-images.githubusercontent.com/58369971/111072451-54cb8a00-84e3-11eb-90c6-71620a00db03.png)
+
+The redirect sends the user to the main page if he is not sign in and there is also error handling if the url is not correct.
+
+![routing5](https://user-images.githubusercontent.com/58369971/111072453-55642080-84e3-11eb-8321-b14b2b0978ee.png)
+
+Use resolver is applied in practice with a delay of 1.5 seconds.
